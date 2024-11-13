@@ -14,7 +14,7 @@ import android.view.InputDevice;
 public class KeyboardUtils {
 
     private static final String TAG = "XiaomiPeripheralManagerKeyboardUtils";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     private static final int kbVendorId = 5593;
     private static final int kbProductId = 163;

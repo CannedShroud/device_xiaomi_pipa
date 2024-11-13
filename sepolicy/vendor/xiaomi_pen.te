@@ -6,3 +6,8 @@ type xiaomi_pen_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(xiaomi_pen)
 
 allow xiaomi_pen xiaomi_touch_device:chr_file { ioctl open read write };
+
+# Allow XiaomiPeripheralManager to read/open /dev/input/event2
+allow system_app input_device:chr_file r_file_perms;
+allow system_app input_device:dir search;
+allow system_app input_device:file { open read write };

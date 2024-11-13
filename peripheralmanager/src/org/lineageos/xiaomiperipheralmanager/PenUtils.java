@@ -19,7 +19,7 @@ import android.content.SharedPreferences;
 public class PenUtils {
 
     private static final String TAG = "XiaomiPeripheralManagerPenUtils";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     private static final int penVendorId = 6421;
     private static final int penProductId = 19841;
@@ -74,15 +74,15 @@ public class PenUtils {
     private static InputDeviceListener mInputDeviceListener = new InputDeviceListener() {
             @Override
             public void onInputDeviceAdded(int id) {
-                refreshPenMode();
+                //refreshPenMode();
             }
             @Override
             public void onInputDeviceRemoved(int id) {
-                refreshPenMode();
+                //refreshPenMode();
             }
             @Override
             public void onInputDeviceChanged(int id) {
-                refreshPenMode();
+                //refreshPenMode();
             }
         };
 }

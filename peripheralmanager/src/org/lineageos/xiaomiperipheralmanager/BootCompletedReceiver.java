@@ -11,10 +11,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import org.lineageos.xiaomiperipheralmanager.PenEventService;
+import org.lineageos.xiaomiperipheralmanager.PenUtils;
+
 public class BootCompletedReceiver extends BroadcastReceiver {
 
     private static final String TAG = "XiaomiPeripheralManager";
-    private static final boolean DEBUG = false;
+    private static final boolean DEBUG = true;
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -24,5 +27,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
         KeyboardUtils.setup(context);
         PenUtils.setup(context);
+
+        Intent serviceIntent = new Intent(context, PenEventService.class);
+        context.startService(serviceIntent);
+
     }
 }
